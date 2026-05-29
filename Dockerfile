@@ -1,18 +1,19 @@
 # build stage
-FROM node:14.5-alpine as build-stage
+FROM node:24-alpine AS build-stage
 
 ARG PUBLIC_URL=/
 
-RUN apk add --no-cache autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc g++ musl-dev python
+RUN corepack enable yarn && apk add --no-cache autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc g++ musl-dev python3 git
 
 WORKDIR /app
-COPY package.json yarn.lock /app/
-RUN yarn install
+COPY ./.yarn /app/.yarn
+COPY package.json yarn.lock .yarnrc.yml /app/
+RUN yarn install --immutable
 
-COPY babel.config.js vue.config.js README.md /app/
+COPY vite.config.mjs index.html README.md /app/
 
 COPY ./bin /app/bin
-COPY ./build/loaders /app/build/loaders
+COPY ./build/vite-plugin-generated-assets.mjs /app/build/vite-plugin-generated-assets.mjs
 COPY ./public /app/public
 COPY ./translations /app/translations
 COPY ./src /app/src

@@ -4,7 +4,7 @@ The timeline for this project is based on Jofwu's [Stormlight Archive Timeline](
 
 Before adding new events to the timeline please get persmission from our team. We may have reasons for not including the event, and if we *do* want to proceed we will need to coordinate the update with other translations.
 
-You can help us out by (1) noting a name for the event, (2) confirming the date fo the event on Jofwu's timeline, (3) writing a small blurb for what the event is, (4) writing a larger description about the event, (5) noting any relate characters, events, or locations, and (6) recording any chapters in the books where the event occurs.
+You can help us out by (1) noting a name for the event, (2) confirming the date of the event on Jofwu's timeline, (3) writing a small blurb for what the event is, (4) writing a larger description about the event, (5) noting any relate characters, events, or locations, and (6) recording any chapters in the books where the event occurs.
  
 # Artwork
 
@@ -22,7 +22,7 @@ If you are aware of a piece of artwork that would fill in where we currently hav
 
 Before adding artwork, please provide our team with proof that the artist gives their explicit permission to use the artwork on this site. Also make sure that you have a link to the artist's website of their choosing for crediting them.
 
-After the artist's permission has been shared and the requisite information gathered, you can add the image file under the appropriate folder under [public/img](https://github.com/Palanaeum/roshar-map/tree/master/public/img). Next navigate to [src/store](https://github.com/Palanaeum/roshar-map/tree/master/src/store) and open the appropriate .json file for the item you wish to add artwork for. For example, to add artwork for an event, open `events.json`. Find the exact item you are adding artwork to and create a new `"image"` key. It will require both a `"file"` (the location ane name of the file in the img directory) and a `"credits"` (providing the name of the artist and a link to their website). See other uses of artwork in the .json file for examples.
+After the artist's permission has been shared and the requisite information gathered, you can add the image file under the appropriate folder under [public/img](https://github.com/Palanaeum/roshar-map/tree/master/public/img). Next navigate to [src/stores](https://github.com/Palanaeum/roshar-map/tree/master/src/stores) and open the appropriate .json file for the item you wish to add artwork for. For example, to add artwork for an event, open `events.json`. Find the exact item you are adding artwork to and create a new `"image"` key. It will require both a `"file"` (the location ane name of the file in the img directory) and a `"credits"` (providing the name of the artist and a link to their website). See other uses of artwork in the .json file for examples.
 
 # Translation
 

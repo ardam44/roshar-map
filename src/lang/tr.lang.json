@@ -1,0 +1,300 @@
+{
+    "ui": {
+        "loading": "Yükleniyor...",
+        "menu": "Menü",
+        "settings": "Ayarlar",
+        "filters": "Filtreler",
+        "close": "Kapat",
+        "back": "Geri",
+        "next": "Sonraki",
+        "previous": "Önceki",
+        "next-event": "Sonraki Olay",
+        "previous-event": "Önceki Olay",
+        "language": "Dil",
+        "help": "Yardım",
+        "about": "Hakkında",
+        "layers": "Katmanlar",
+        "separate-timelines": "Farklı zaman çizelgeleri",
+        "add-timeline": "Karşılaştırmak için {timeline-icon} simgesine tıklayarak bir zaman çizelgesi ekleyin.",
+        "enable": "Onayla",
+        "disable": "Reddet",
+        "display-separately": "Ayrı olarak görüntüle",
+        "stop-display-separately": "Ayrı olarak görüntüleme",
+        "jump-to-start": "Başlangıca git",
+        "jump-to-end": "Sona git",
+        "coppermind": "daha fazla bilgi Coppermind'da... ",
+        "welcome": "Brandon Sanderson'ın *Fırtınaışığı Arşivi* kitap serisinin resmi olmayan interaktif haritasına ve zaman çizelgesine hoş geldiniz!",
+        "languageHeading": "Dil Seçimi",
+        "aboutText": "İnteraktif Haritamıza ve Roshar Zaman Çizelgemize hoş geldiniz!\n\nBu web sitesi Roshar haritasını ve Brandon Sanderson'ın *Fırtınaışığı Arşivi* serisinin zaman çizelgesini keşfetmenizi sağlar. Haritadaki konumlara tıklamak, ilgili olayların ve karakterlerin yanı sıra onunla ilgili ayrıntıları da ortaya çıkaracaktır. Sayfanın altındaki zaman çizelgesine göz atmak, haritadaki farklı olaylar arasında geçiş yapmanıza ve bu olaylar hakkında daha fazla bilgi açmanıza olanak tanır. Daha fazlasını öğrenmek isterseniz Coppermind wiki'sine bağlantılar mevcuttur.\n\nBu, Dragonsteel Entertainment'a bağlı olmayan, hayran yapımı bir projedir. Tüm tarihler ve konumlar, dünya içi referanslar ile kendi tahminlerimiz ve varsayımlarımızın birleşimine dayanmaktadır. Serinin zaman çizelgesini daha ayrıntılı incelemek isterseniz veya kullanılan referansları ve varsayımları merak ediyorsanız lütfen [Jofwu'nun Fırtınaışığı Arşivi Zaman Çizelgesi Projesi'ni](https://docs.google.com/spreadsheets/d/1zq5bJoKE83ggDCjH43i1hZi0CIpB2iAx7v37zQPVFK0) ziyaret edin.\n\nHenüz yapmadıysanız eğitime göz atmayı unutmayın! *Fırtınaışığı Arşivi*'ni okurken bunu eğlenceli, anlayışlı ve yararlı bir araç olarak bulacağınızı umuyoruz!",
+        "brandon-sanderson": "Brandon Sanderson",
+        "credits": "Credits",
+        "map-credits": "Spenser Farnes'den (Stoneward13) harita çizimi",
+        "more": "Daha Fazla...",
+        "related": "İlgili",
+        "date": "Tarih",
+        "date-help": "Nasıl Okunur?",
+        "chapter": "Bölüm",
+        "dismiss": "Kapat",
+        "first-visit": {
+            "heading": "Hoşgeldiniz",
+            "intro": "**Bu uygulamada, yalnızca Karakterler ve Olaylar menülerinden SPOİLER yiyebilirsiniz. Karakterler menüsü DÖRT kitaptan da spoiler İÇERİRKEN, Olaylar menüsünde BİTİRMEDİĞİNİZ kitapları kapatırsanız spoiler YEMEZSİNİZ. Yani bir olay, yalnızca önceki veya bizzat kendi geçtiği kitaptan spoiler içerir.** Riski size ait olmak üzere devam edebilirsiniz.\n\nGörünüşe göre bu uygulamayı ilk kez kullanıyorsunuz. Biraz yardım ister misin?\n\nYardımı daha sonra istediğiniz zaman sağ üstteki menüden bulabilirsiniz.",
+            "calendar": "Tarihleri ​​açıkla",
+            "tutorial": "İpuçlarını göster"
+        },
+        "tutorial": {
+            "title": "Eğitim",
+            "explanation": "Uygulamayla neler yapabileceğinizi öğrenmek için kırmızı noktalardan herhangi birine tıklayın.",
+            "calendar": "Takvimi ve tarihleri ​​açıklayın",
+            "hints": {
+                "settings-button": {
+                    "title": "Ayarlar Menüsü",
+                    "text": "Harita ve zaman çizelgesi için görüntüleme ve filtre ayarlarını yapın"
+                },
+                "menu-button": {
+                    "title": "Menü",
+                    "text": "Yararlı bağlantılar ve dil ayarlarını bulun"
+                },
+                "search": {
+                    "title": "Ara",
+                    "text": "Olayları, karakterleri, yerleri ve daha fazlasını arayın."
+                },
+                "timeline": {
+                    "title": "Zaman Çizelgesi",
+                    "text": "İlgili olayı görüntülemek için kaydırarak bu zaman çizelgesinde gezinin ve elmaslardan herhangi birine tıklayın"
+                },
+                "event": {
+                    "title": "Olay Tarihleri",
+                    "text": "Ayrıntılı bir özet, ilgili bilgiler ve varsa etkinliğin kitapta nerede bulunacağı için \"Daha Fazla\" bağlantısını tıklayın."
+                },
+                "location": {
+                    "title": "Konum Detayları",
+                    "text": "Ayrıntılı bir açıklamayı ve ilgili bilgileri görüntülemek için adlandırılmış herhangi bir konuma tıklayın."
+                },
+                "settings-layers": {
+                    "title": "Katmanlar",
+                    "text": "Katmanlar, harita görünümünün üstünde ek yararlı bilgiler sağlayabilir. Herhangi bir zamanda değiştirilebilirler."
+                },
+                "settings-filters": {
+                    "title": "Filtreler",
+                    "text": "Filtreler, zaman çizelgesinde hangi olayların görüntüleneceğine karar vermenizi sağlar. Bunları tamamen gizleyebilir veya filtrelenen öğeye odaklanan ayrı bir zaman çizelgesi oluşturabilirsiniz."
+                },
+                "settings-separate-timelines": {
+                    "title": "Ayrı Zaman Çizelgeleri",
+                    "text": "Bir filtreyi ayrı bir zaman çizelgesi olarak görüntülemeye başladığınızda onu burada etiketlenmiş olarak bulabilirsiniz. Zaman çizelgelerinin görüntülenme sırasını değiştirmek için sürükleme tutamacını kullanın."
+                },
+                "measure-button": {
+                    "title": "Ölçümler",
+                    "text": "Haritadaki mesafeleri ölçün ve konumların tam kordinatlarını alın."
+                },
+                "go-to-date-button": {
+                    "title": "Tarihe Git",
+                    "text": "Zaman çizelgesinde isteğe bağlı bir tarihe atlama."
+                }
+            }
+        },
+        "calendar-guide": {
+            "title": "Roshar Takvimi",
+            "start": {
+                "explanation": "Bu Roshar takvimindeki bir yıldır. 1.1 Dünya yılına karşılık gelir.",
+                "name": "Başla"
+            },
+            "day": {
+                "name": "Gün",
+                "explanation": "Her gün 20 Roshar saati uzunluğundadır."
+            },
+            "week": {
+                "name": "Hafta",
+                "explanation": "Her hafta 5 gün uzunluğundadır."
+            },
+            "month": {
+                "name": "Ay",
+                "explanation": "Her ay 50 gün, yani 10 hafta sürmektedir."
+            },
+            "year": {
+                "name": "Yıl",
+                "explanation": "Her yıl 10 ay, 100 hafta yani 500 gündür."
+            },
+            "date": {
+                "name": "Tarihler",
+                "explanation": "Tarihler önce yıl, sonra ay, hafta ve gün olarak yazılmaktadır. Numaralar periyotlara ayrılmıştır.\n\nMesela, 1173 yılındaki bu tarih şöyle yazılır: {date} "
+            }
+        },
+        "error-screen": {
+            "message": "Upss... Görünüşe göre uygulama bir sebepten dolayı tarayıcınızda yüklenemedi.\n\nLütfen [modern bir tarayıcı](https://browsehappy.com) kullanarak bizi ziyaret etmeyi düşünün.",
+            "report-intro": "Bunun gerçek bir hata olduğunu mu düşünüyorsunuz?",
+            "report-button": "GitHub üzerinden bildir"
+        },
+        "translatorNote": {
+            "abbreviation": "ÇN",
+            "full": "Çevirmen'in Notu"
+        },
+        "go-to-date": {
+            "heading": "Tarihe git",
+            "fields": {
+                "year": {
+                    "label": "Yıl",
+                    "placeholder": "YYYY"
+                },
+                "month": {
+                    "label": "Ay",
+                    "placeholder": "AA"
+                },
+                "week": {
+                    "label": "Hafta",
+                    "placeholder": "HH"
+                },
+                "day": {
+                    "label": "Gün",
+                    "placeholder": "GG"
+                }
+            },
+            "errors": {
+                "year-required": "Bir yıl girmek zorundasınız!",
+                "month-required": "Bir ay girmek zorundasınız!",
+                "week-required": "Bir hafta girmek zorundasınız!"
+            }
+        },
+        "measurement": {
+            "button": "Mesafeleri Ölçün",
+            "explanation": "Pozisyonlarını ve aralarındaki mesafeyi ölçmek için herhangi iki noktaya tıklayın.\n\nMasaüstünde, birden fazla nokta eklemek için **[Ctrl]** tuşuna basılı tutarak tıklayın.\n\nMobilde, birden fazla nokta eklemek için **uzun basın**.\n\nRosharan derecesinin (°ᴿ) 0 ile 200 arasında değiştiğini unutmayın.",
+            "title": "Ölçüm",
+            "labels": {
+                "start": "Başla",
+                "end": "Bitir",
+                "distance": "Mesafe"
+            },
+            "distance": "{distanceKm} km",
+            "coordinates": {
+                "north": "{degrees}°ᴿ K",
+                "south": "{degrees}°ᴿ G",
+                "east": "{degrees}°ᴿ D",
+                "west": "{degrees}°ᴿ B",
+                "full": "{latitude}, {longitude}"
+            }
+        },
+        "search": {
+            "title": "Arama",
+            "prompt": "Aranıyor...",
+            "loading": "Birazdan arama hazır olacak...",
+            "empty-query": "Sonuçların burada görünmesi için arama terimlerinizi yukarıya girin.",
+            "no-results": "Maalesef bu arama terimleri için hiçbir şey bulamadık."
+        },
+        "share": "Paylaş",
+        "translation-by": "Çevirmen:",
+        "unlock-timeline": "Gezinme kilidini aç",
+        "lock-timeline": "Gezinmeyi zaman çizelgesine kilitle",
+        "circa": "yakl. {date}",
+        "image-credits": "{credits} tarafından"
+    },
+    "meta": {},
+    "texture-locale": "tr",
+    "text-direction": "ltr",
+    "search-language": "tr",
+    "name": "Roshar Haritası",
+    "logo": "roshar.png",
+    "sharing": {
+        "title": "Paylaş",
+        "global-message": "Roshar'ın İnteraktif Haritasına ve Zaman Çizelgesine göz atın!",
+        "general": {
+            "button-text": "Paylaş…",
+            "copied": "Kopyalandı!",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
+        "twitter": {
+            "button-text": "Twitter/X",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
+        "instagram": {
+            "button-text": "Instagram",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
+        "facebook": {
+            "button-text": "Facebook"
+        },
+        "reddit": {
+            "button-text": "Reddit",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
+        "tumblr": {
+            "button-text": "Tumblr",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        },
+        "more": {
+            "button-text": "Daha fazla...",
+            "entry-template": "Roshar'ın İnteraktif Haritası ve Zaman Çizelgesi'ndeki \"{entry}\" öğesine göz atın!"
+        }
+    },
+    "entry-types": {
+        "events": "Olaylar",
+        "locations": "Yerler",
+        "characters": "Karakterler",
+        "misc": "Çeşitli"
+    },
+    "numbers": [
+        "Jes",
+        "Nan",
+        "Chach",
+        "Vev",
+        "Palah",
+        "Shash",
+        "Betab",
+        "Kak",
+        "Tanat",
+        "Ishi"
+    ],
+    "layers": {
+        "shadesmar": "Shadesmar",
+        "graticule": "Enlem ve Boylam Çizgileri",
+        "silverKingdoms": "Gümüş Krallıklar",
+        "oathgates": "Yeminkapısı Konumları",
+        "factions": "Gezegenin Mevcut Durumu"
+    },
+    "factions": {
+        "odium": {
+            "name": "Garaz'ın Kuvvetleri",
+            "style": "Altın"
+        },
+        "neutral": {
+            "name": "Tarafsız",
+            "style": "Yeşil"
+        },
+        "coalition": {
+            "name": "Dalinar'ın Hükümdarlar Koalisyonu",
+            "style": "Mavi ve Bordo"
+        }
+    },
+    "tagCategories": {
+        "tags": "Etiketler",
+        "characters": "Karakterler",
+        "books": "Kitaplar"
+    },
+    "tags": {
+        "general": "Genel",
+        "dalinar": "Dalinar",
+        "kaladin": "Kaladin",
+        "shallan": "Shallan",
+        "twok": "Kralların Yolu",
+        "wor": "Parlayan Sözler",
+        "ed": "Hudutaşar",
+        "ob": "Oathbringer",
+        "ds": "Şafakparesi",
+        "row": "Savaş Ritmi",
+        "adolin": "Adolin",
+        "renarin": "Renarin",
+        "lift": "Lift",
+        "szeth": "Szeth",
+        "rysn": "Rysn",
+        "jasnah": "Jasnah",
+        "navani": "Navani",
+        "eshonai": "Eshonai",
+        "taravangian": "Taravangian",
+        "wit": "Akıl",
+        "moash": "Moash",
+        "venli": "Venli",
+        "history": "Tarih",
+        "diagram": "Diyagram",
+        "ghostbloods": "Hayaletkanlar"
+    },
+    "changelog": "Roshar'ın güncellenmiş Haritası ve Zaman Çizelgesi'ne hoş geldiniz! Hem *Şafakparesi* hem de *Savaş Ritmi*'ndeki tüm etkinlikleri, yerleri ve karakterleri ekledik; dolayısıyla bu başlıkları henüz okumadıysanız dikkatli olun!\n\n## Yeni ne var?\n\nTüm mevcut kitap içeriğinin yanı sıra, Harita ve zaman çizelgesinde yeni özellikler ve genel iyileştirmeler üzerinde yoğun bir şekilde çalışıyoruz. İşte en akılda kalanlar:\n\n * 🔎 **Arama:** Artık olayları, yerleri, karakterleri ve daha fazlasını arayabilirsiniz! Bu özellik, ayarlar menüsü düğmesinin yanında, sağ üst köşede bulunabilir.\n * 📐 **Ölçümler:** Kraliyet haritacısı Isasik Shulin'e danıştık ve hesabını yaptık! Zaman çizelgesinin sağ üst köşesindeki pusula görünümlü düğmeden erişilebilen bu özellik sayesinde artık Roshar'daki mesafeleri ölçebilir ve kıtadaki herhangi bir yerin koordinatlarını alabilirsiniz. Bonus olarak, haritaya çizdiğimiz grafik de artık daha doğru olacak!<br>*Ölçümlerin kendi araştırmamıza dayandığını ve tam olarak olmayabileceğini unutmayın.*\n * ⚠️ **Spoiler Filtreleri:** Ayarların altındaki kitap filtreleri, spoiler filtreleri görevi görecek şekilde yeniden düzenlendi! Artık BİTİRMEDİĞİNİZ kitaplara ilişkin etkinlikleri devre dışı bırakarak zaman çizelgesinde görünmelerini engelleyebilirsiniz.<br>*Ancak bu etkinliklerin, konumların veya karakterlerin ayrıntılı görünümünde 'İlgili Etkinlikler' altında görünmeye devam edeceğini unutmayın.*\n * 🤝 **Paylaşma:** Tam olarak uzakkalem teknolojisine sahip olmasak da, artık haritada ve zaman çizelgesinde görüntüleyebileceğiniz her şeyin ayrıntı görünümlerinde kolayca erişilebilen paylaşım düğmeleri var! Twitter, Facebook, Reddit ve Tumblr varsayılan olarak desteklenir, ancak telefonlar gibi desteklenen cihazlarda mevcut herhangi bir paylaşım seçeneğini kullanabilirsiniz.\n * 📍 **Güncellenmiş Shadesmar Haritası:** Bir dikeysellik bulduk ve Roshar'ın Bilişsel Alemi'ini keşfetme şansı bulduk! Shadesmar haritası şu ana kadar bildiğimiz bazı konumlarla güncellendi.\n\nBu değişikliklerden herhangi birinde herhangi bir sorun veya hata bulursanız bize bildirmekten çekinmeyin. [geri bildirim dizimizden](https://www.17thshard.com/forum/topic/92801-interactive-map-and-timeline-of-roshar-feedback/)  veya [GitHub](https://github.com/Palanaeum/roshar-map/issues)!\n\nBu güncellenmiş deneyimi keşfederken iyi eğlenceler!",
+    "title": "{page} | Fırtınaışığı Arşivi"
+}

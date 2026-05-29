@@ -2,6 +2,11 @@ import { Euler, EventDispatcher, MOUSE, Plane, Ray, Raycaster, TOUCH, Vector2, V
 import Hammer from 'hammerjs'
 import { lerp, smootherstep } from '@/utils.js'
 
+/**
+ * Controls for the map camera interaction (pan, zoom, rotate).
+ * @param {THREE.Camera} object - The camera object.
+ * @param {HTMLElement} domElement - The DOM element to attach listeners to.
+ */
 const MapControls = function (object, domElement) {
   this.object = object
   this.domElement = domElement
@@ -35,11 +40,17 @@ const MapControls = function (object, domElement) {
   this.position0 = this.object.position.clone()
   this.zoom0 = this.object.zoom
 
+  /**
+   * Saves the current state (position, zoom) as the reset point.
+   */
   this.saveState = function () {
     scope.position0.copy(scope.object.position)
     scope.zoom0 = scope.object.zoom
   }
 
+  /**
+   * Resets the controls to the saved state.
+   */
   this.reset = function () {
     scope.object.position.copy(scope.position0)
     scope.object.zoom = scope.zoom0
@@ -56,6 +67,11 @@ const MapControls = function (object, domElement) {
   const textPlane = new Plane(new Vector3(0, 0, 1), 1)
 
   // this method is exposed, but perhaps it would be better if we can make it private...
+  /**
+   * Updates the controls.
+   * @param {number} delta - The time delta.
+   * @returns {boolean} - Always returns false.
+   */
   this.update = (function () {
     const position = new Vector3()
 
@@ -140,6 +156,9 @@ const MapControls = function (object, domElement) {
     }
   }())
 
+  /**
+   * Disposes of the controls and removes event listeners.
+   */
   this.dispose = function () {
     scope.domElement.removeEventListener('mousedown', onMouseDown, false)
     scope.domElement.removeEventListener('wheel', onMouseWheel, false)
@@ -166,6 +185,12 @@ const MapControls = function (object, domElement) {
     clampPosition(targetPosition, targetAngle)
   }
 
+  /**
+   * Transitions the camera to a target position and zoom.
+   * @param {THREE.Vector3} target - The target position.
+   * @param {number} newZoom - The target zoom level.
+   * @param {number} [yOffset] - Optional Y offset in pixels.
+   */
   this.transitionTo = function (target, newZoom, yOffset) {
     transitionStartZoom = zoom
     targetZoom = newZoom
@@ -189,6 +214,7 @@ const MapControls = function (object, domElement) {
   //
 
   const scope = this
+  scope.domElement.style.touchAction = 'none'
 
   const changeEvent = { type: 'change' }
   const startEvent = { type: 'start' }
@@ -237,6 +263,8 @@ const MapControls = function (object, domElement) {
   const clickStart = new Vector2()
   let clickTouches = 0
   let wasMultiTouch = false
+  let clickCtrlKey = false
+  let longPressTriggered = false
 
   const mousePosition = new Vector2()
 
@@ -349,7 +377,7 @@ const MapControls = function (object, domElement) {
 
     const result = rayCast(clickStart.x, clickStart.y, true)
     if (result !== null) {
-      scope.dispatchEvent({ type: 'click', position: result })
+      scope.dispatchEvent({ type: 'click', position: result, ctrlKey: clickCtrlKey })
     }
   }
 
@@ -404,6 +432,11 @@ const MapControls = function (object, domElement) {
       return
     }
 
+    if (longPressTriggered) {
+      longPressTriggered = false
+      return
+    }
+
     const { x: clientX, y: clientY } = scope.domElement.getBoundingClientRect()
     const offsetX = event.changedTouches[0].clientX - clientX
     const offsetY = event.changedTouches[0].clientY - clientY
@@ -411,7 +444,7 @@ const MapControls = function (object, domElement) {
     if (offsetX === clickStart.x || offsetY === clickStart.y) {
       const result = rayCast(clickStart.x, clickStart.y, true)
       if (result !== null) {
-        scope.dispatchEvent({ type: 'click', position: result })
+        scope.dispatchEvent({ type: 'click', position: result, ctrlKey: false })
       }
     }
   }
@@ -438,6 +471,7 @@ const MapControls = function (object, domElement) {
       case 0:
         mouseAction = scope.mouseButtons.LEFT
         clickStart.set(event.offsetX, event.offsetY)
+        clickCtrlKey = event.ctrlKey
         break
       case 1:
         mouseAction = scope.mouseButtons.MIDDLE
@@ -560,6 +594,7 @@ const MapControls = function (object, domElement) {
     }
 
     clickTouches += 1
+    longPressTriggered = false
 
     event.preventDefault() // prevent scrolling
 
@@ -634,6 +669,11 @@ const MapControls = function (object, domElement) {
       return
     }
 
+    if (event.key === 'Escape') {
+      scope.dispatchEvent({ type: 'escape' })
+      return
+    }
+
     if (event.target !== document.body) {
       return
     }
@@ -668,25 +708,38 @@ const MapControls = function (object, domElement) {
   }
 
   scope.domElement.addEventListener('mousedown', onMouseDown, false)
-  scope.domElement.addEventListener('wheel', onMouseWheel, false)
+  scope.domElement.addEventListener('wheel', onMouseWheel, { passive: false })
   scope.domElement.addEventListener('mouseover', updateMousePos, false)
   scope.domElement.addEventListener('mousemove', updateMousePos, false)
   scope.domElement.addEventListener('mouseleave', resetMousePos, false)
 
-  scope.domElement.addEventListener('touchstart', onTouchStart, false)
-  scope.domElement.addEventListener('touchend', onTouchEnd, false)
-  scope.domElement.addEventListener('touchmove', onTouchMove, false)
+  scope.domElement.addEventListener('touchstart', onTouchStart, { passive: false })
+  scope.domElement.addEventListener('touchend', onTouchEnd, { passive: false })
+  scope.domElement.addEventListener('touchmove', onTouchMove, { passive: false })
 
   scope.domElement.ownerDocument.addEventListener('keydown', onKeyDown, false)
   scope.domElement.ownerDocument.addEventListener('keyup', onKeyUp, false)
 
-  const hammer = new Hammer.Manager(scope.domElement)
+  const hammer = new Hammer.Manager(scope.domElement, {
+    inputClass: Hammer.TouchInput,
+    touchAction: 'none'
+  })
 
   hammer.add(new Hammer.Pinch())
+  hammer.add(new Hammer.Press({ time: 500, threshold: 15 }))
 
   hammer.on('pinch', function (event) {
     const factor = lerp(1, event.scale, 0.5)
     targetZoom = Math.max(0, Math.min(factor * targetZoom, 1))
+  })
+
+  hammer.on('press', function (_event) {
+    longPressTriggered = true
+    panning = false
+    const result = rayCast(clickStart.x, clickStart.y, true)
+    if (result !== null) {
+      scope.dispatchEvent({ type: 'click', position: result, ctrlKey: true })
+    }
   })
 
   // make sure element can receive keys.
